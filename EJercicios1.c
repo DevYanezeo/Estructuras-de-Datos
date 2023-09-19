@@ -97,17 +97,27 @@ int main(){
 
 
     int MatrizA[N][N] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    int MatrizB[N][N] = {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}};
+    int MatrizB[N][N] = {{9, 2, 7}, {6, 5, 4}, {3, 2, 1}};
     int MatrizResultado[N][N]; // Matriz para almacenar el resultado
 
     // Multiplicar MatricesA y MatrizB, almacenar el resultado en MatrizResultado
     MultiplicarMatrices(MatrizA, MatrizB, MatrizResultado,3);
 
+
+    // Imprimir la matriz resultante (MatrizResultado)
+    printf("Matriz Resultado (Multiplicación):\n");
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("%d ", MatrizResultado[i][j]);
+        }
+        printf("\n");
+    }
+
     // Sumar MatricesA y MatrizB, almacenar el resultado en MatrizResultado
     SumarMatrices(MatrizA, MatrizB, MatrizResultado,3);
 
     // Imprimir la matriz resultante (MatrizResultado)
-    printf("Matriz Resultado:\n");
+    printf("Matriz Resultado (Suma):\n");
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             printf("%d ", MatrizResultado[i][j]);
