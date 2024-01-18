@@ -5,7 +5,7 @@
 int main (){
     
     printf("Presiona Enter para continuar...\n");
-    getchar(); // Espera a que el usuario presione Enter
+    getchar();
     menu();
 
 

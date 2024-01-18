@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "clientes.h"
 #include <stdbool.h>
 
-/* Estructuras de datos */
+
+/* Estructuras de datos LISTA ENLAZADA */
 typedef struct nodoGenerico {
     int dato;
     struct nodoGenerico* puntero;
@@ -11,18 +11,86 @@ typedef struct nodoGenerico {
 typedef nodo* TDAlista;
 
 TDAlista crearListaVacia(){
-    TDAlista lista=
+    TDAlista lista=(TDAlista)malloc(sizeof(TDAlista));
+    lista=NULL;
+    return lista;
 }
+
+
+void insertarInicio(TDAlista* lista, int rut){
+    nodo* nuevo = (nodo*)malloc(sizeof(nodo));
+    nuevo->dato = rut;
+    nuevo->puntero = *lista;
+    *lista=nuevo;
+}
+int esListaVacia(TDAlista lista){
+    if (lista == NULL){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+/* Estructuras de datos TDA PILA */
+typedef struct {
+    int capacidad;
+    int size;
+    nodo* tope;
+}TDApila;
+
+TDApila* crearPilaVacia(int capacidad){
+    TDApila* pila = (TDApila*)malloc(sizeof(TDApila));
+    pila->capacidad = capacidad;
+    pila->size=0;
+    pila->tope=NULL;
+    return pila;
+}
+int esPilavacia(TDApila* pila){
+    if (pila->size == 0){
+        return 1;
+    }
+    else
+        return 0;
+}
+
+void apilar(TDApila* pila, int rut){
+    nodo* nodoAux=(nodo*)malloc(sizeof(nodo));
+    nodoAux->dato = rut;
+    nodoAux->puntero = pila->tope;
+    
+        
+
+    
+}
+
+
+FILE *abrirArchivos(const char *name,char *modo){
+    FILE *archivo;
+    archivo = fopen(name, modo);
+    if (archivo == NULL){
+        printf("No se pudo abrir el archivo");
+    }
+    return archivo;
+}
+
+
+
 
 /*
  * Función: registrarUsuario
  * Descripción:
  * Parámetros: 
  * Retorna: No aplica
- */
+ */ 
 void registrarUsuario(int rut, int clave){
     printf("Registrando usuario.....");
-
+    FILE *archivo = abrirArchivos("usuarios.lst", "a");
+    if (archivo != NULL){
+        fprintf(archivo, "%d, %d\n", rut, clave);
+        printf("Registrado con exito!");
+        fclose(archivo);
+    }
 
 }
 
@@ -34,10 +102,20 @@ void registrarUsuario(int rut, int clave){
  */
 void loginUsuario(int rut, int clave){
     printf("Loggeando usuario.....");
+    FILE *archivo = abrirArchivos("usuarios.lst", "r");
+    if (archivo != NULL){
+        crearListaVacia();
+        
+
+    }
 
 
 }
 
+void menuClientes(){
+
+    
+}
 
 
 /*
@@ -51,6 +129,7 @@ void loginUsuario(int rut, int clave){
  * Retorna: No aplica
  */
 void menu (){
+    
     bool salir = false;
     int seleccion;
     int rutUsuario;
@@ -97,7 +176,3 @@ void menu (){
 }
 
     
-
-
-
-
