@@ -76,37 +76,3 @@ print(Arreglo)
 repetidos = elementosRepetidos(Arreglo)
 print(repetidos)
 
-"""
-Listas Enlazadas:
-Implementación de una Playlist con Listas Enlazadas:
-
-Implementa una playlist de canciones utilizando una lista enlazada simple. 
-Debes tener una estructura Cancion que represente una canción y contenga información como el título de la canción y el artista. Luego, implementa funciones para:
-
-    Agregar una canción al principio de la playlist.
-    Agregar una canción al final de la playlist.
-    Agregar una canción en una posición específica de la playlist.
-    Mostrar la lista de canciones en la playlist.
-
-Eliminar una Canción Específica:
-
-Escribe una función que permita eliminar una canción específica de la playlist enlazada. 
-Puedes identificar la canción por su título o por alguna otra característica única.
-
-Invertir el Orden de la Playlist:
-
-Implementa una función que invierta el orden de las canciones en la playlist, 
-de modo que la última canción se convierta en la primera y así sucesivamente.
-
-Detectar si la Playlist tiene un Ciclo:
-
-Aunque en una playlist de canciones no es común tener ciclos, 
-puedes adaptar el ejercicio original para verificar si la lista enlazada tiene ciclos o repite canciones.
-
-Combinar dos Playlists en una sola:
-
-Escribe un programa que tome dos playlists de canciones y las combine en una sola playlist más grande.
- Puedes implementar una función que tome dos listas enlazadas y las fusione en una nueva lista enlazada.
-"""
-
-class cancion
